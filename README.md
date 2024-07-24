@@ -9,5 +9,5 @@ docker push mionita22/codeql-java:latest
 # Use Image
 
 ```bash
-docker run --rm -v $(pwd):/project/ --env INPUT="./" --env OUTPUT="./result.sarif" mionita22/codeql-java
+docker run -it --rm -v $(pwd):/project/ --env INPUT="./" --env OUTPUT="./result.sarif" mionita22/codeql-java
 ```
