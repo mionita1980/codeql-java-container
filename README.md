@@ -1,8 +1,9 @@
 # Build Image
 
 ```bash
-docker build . --tag mionita22/codeql-java:2.18.1 --tag mionita22/codeql-java:latest
-docker push mionita22/codeql-java:2.18.1
+export CODEQL_VERSION=$(head -n 1 ./codeql.version)
+docker build . --build-arg CODEQL_VERSION=${CODEQL_VERSION} --tag mionita22/codeql-java:${CODEQL_VERSION} --tag mionita22/codeql-java:latest
+docker push mionita22/codeql-java:${CODEQL_VERSION}
 docker push mionita22/codeql-java:latest
 ```
 
